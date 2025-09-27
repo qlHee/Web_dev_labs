@@ -1,0 +1,1 @@
+I took the web Development course in the fall/winter semester of 2025. This repository is used to store my course assignments, all of which have been completed in accordance with the course requirements.
