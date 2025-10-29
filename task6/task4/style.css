@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: #f7fafc;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  color: #2d3748;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* 伪元素创建渐变下划线 */
+h1::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.password-display {
+  background: #edf2f7;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#password {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #2d3748;
+  flex: 1;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+#copy-btn {
+  font-size: 20px;
+  color: #a0aec0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* 复制按钮 hover 效果 */
+#copy-btn:hover {
+  color: #4a5568;
+}
+
+.options-container {
+  background: #edf2f7;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+.option label {
+  color: #4a5568;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+#length {
+  width: 200px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+#length-value {
+  background: #667eea;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  min-width: 35px;
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+#generate-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 25px;
+}
+
+#generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#generate-btn:active {
+  transform: translateY(0);
+}
+
+.strength-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.strength-container p {
+  color: #4a5568;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+#strength-label {
+  min-width: 80px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.strength-bar-container {
+  flex: 1;
+  background: #e2e8f0;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #fbd38d;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+}
+
