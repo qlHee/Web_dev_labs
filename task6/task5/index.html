@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <h1 class="header-title">
+          <i class="fas fa-utensils"></i> Recipe Finder
+        </h1>
+        <p class="header-subtitle">Find delicious recipe from around the world</p>
+        <p class="header-subtitle" style="margin-top: 1rem; margin-bottom: -1rem;">Data From<span style="color: #0d1840;">The MealDB</span> 👨‍🍳</p>
+      </header>
+
+      <!-- Search Section -->
+      <div class="search-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search recipes... (e.g., chicken, pasta, salad)"
+          />
+          <button id="search-btn" class="search-btn">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+
+      <!-- Error Container -->
+      <div id="error-container" class="error-container hidden"></div>
+
+      <!-- Results Section -->
+      <div class="results-section">
+        <h2 id="result-heading" class="result-heading"></h2>
+        <div id="meals" class="meals-container"></div>
+      </div>
+
+      <!-- Meal Details Section -->
+      <div id="meal-details" class="meal-details hidden">
+        <button id="back-btn" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to Results
+        </button>
+        <div class="meal-details-content"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
