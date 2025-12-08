@@ -1,0 +1,8 @@
+com/ainaojin/service/ChatService.class
+com/ainaojin/config/AiConfig.class
+com/ainaojin/AiNaojinApplication.class
+com/ainaojin/service/AiManager.class
+com/ainaojin/controller/ChatController.class
+com/ainaojin/config/CorsConfig.class
+com/ainaojin/service/impl/ChatServiceImpl.class
+com/ainaojin/model/ChatRoom.class

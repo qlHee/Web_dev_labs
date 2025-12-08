@@ -1,0 +1,25 @@
+package com.ainaojin.model;
+
+import com.volcengine.ark.runtime.model.completion.chat.ChatMessage;
+import java.util.List;
+
+public class ChatRoom {
+    private Long roomId;
+    private List<ChatMessage> chatMessageList;
+
+    public Long getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
+    }
+
+    public List<ChatMessage> getChatMessageList() {
+        return chatMessageList;
+    }
+
+    public void setChatMessageList(List<ChatMessage> chatMessageList) {
+        this.chatMessageList = chatMessageList;
+    }
+}

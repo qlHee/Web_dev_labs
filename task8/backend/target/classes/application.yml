@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+ai:
+  apiKey: ae51d0ef-37e3-47f2-a5d6-ef44a510ae39
+  botId: bot-20251208145056-wg9nr
+
+knife4j:
+  enable: true
+  openapi:
+    title: 脑筋急转弯api文档
+    group:
+      default:
+        group-name: 默认分组
+        api-rule: package
+        api-rule-resources:
+          - com.ainaojin.controller
