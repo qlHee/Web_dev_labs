@@ -1,0 +1,43 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# macOS
+.DS_Store
+*.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Java / Maven
+target/
+*.jar
+*.class
+*.log
+
+# Node.js
+node_modules/
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 部署包中的jar文件（编译产物）
+quiz ubuntu部署包/*.jar

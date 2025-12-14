@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 测试系统</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <div id="welcome-section" class="section">
+                <h1>欢迎参加 Quiz 测试</h1>
+                <p>本测试包含<span id="total-questions">5</span>道题目，满分为<span id="max-score">5</span>分。</p>
+                <button id="start-btn" class="btn primary-btn">开始测试</button>
+            </div>
+
+            <div id="quiz-section" class="section hidden">
+                <div class="quiz-header">
+                    <h2>题目 <span id="current-question">1</span>/<span id="total-questions-quiz">0</span></h2>
+                    <div class="timer">
+                        <span id="time-left">--:--</span>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <h3 id="question-text"></h3>
+                    <div id="options-container" class="options-container"></div>
+                </div>
+
+                <div id="answer-feedback" class="answer-feedback hidden">
+                    <div class="feedback-content">
+                        <p id="feedback-result"></p>
+                        <p id="feedback-your-answer"></p>
+                        <p id="feedback-correct-answer"></p>
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="prev-btn" class="btn secondary-btn">上一题</button>
+                    <button id="next-btn" class="btn primary-btn">下一题</button>
+                    <button id="submit-btn" class="btn success-btn hidden">提交答案</button>
+                </div>
+            </div>
+
+            <div id="results-section" class="section hidden">
+                <h1>测试结果</h1>
+                <div class="result-details">
+                    <p>您的得分：<span id="user-score">0</span>/<span id="max-score-result">0</span></p>
+                    <p>正确题数：<span id="correct-answers">0</span>/<span id="total-questions-result">0</span></p>
+                </div>
+                <div id="result-feedback"></div>
+                <div class="result-actions">
+                    <button id="retry-btn" class="btn primary-btn">重新测试</button>
+                    <button id="logout-btn" class="btn secondary-btn">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/axios.min.js"></script>
+    <script src="scripts/quiz.js?v=2"></script>
+</body>
+</html>

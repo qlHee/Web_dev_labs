@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API测试</title>
+</head>
+<body>
+    <h1>API测试页面</h1>
+    <button id="test-register">测试注册</button>
+    <button id="test-login">测试登录</button>
+    <div id="result"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('test-register').addEventListener('click', function() {
+            axios.post('http://localhost:8080/register', {
+                username: 'testuser' + Date.now(),
+                password: '123456',
+                checkpassword: '123456'
+            })
+            .then(function(response) {
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(response.data, null, 2) + '</pre>';
+            })
+            .catch(function(error) {
+                document.getElementById('result').innerHTML = '<pre>错误: ' + error.message + '</pre>';
+                console.error(error);
+            });
+        });
+
+        document.getElementById('test-login').addEventListener('click', function() {
+            axios.post('http://localhost:8080/login', {
+                username: 'admin',
+                password: 'admin123'
+            })
+            .then(function(response) {
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(response.data, null, 2) + '</pre>';
+            })
+            .catch(function(error) {
+                document.getElementById('result').innerHTML = '<pre>错误: ' + error.message + '</pre>';
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>

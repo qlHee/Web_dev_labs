@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录 - Quiz 测试系统</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>用户登录</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="login-btn" class="btn primary-btn">登录</button>
+                </div>
+                <div class="form-footer">
+                    <p>还没有账号？<a href="register.html">立即注册</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="scripts/axios.min.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById('login-btn').addEventListener('click', function() {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                if (!username || !password) {
+                    alert('请填写所有字段');
+                    return;
+                }
+
+                axios.post('http://localhost:8080/login', {
+                    username: username,
+                    password: password
+                })
+                .then(function(response) {
+                    const res = response.data;
+                    if (res.code === 1) {
+                        localStorage.setItem('token', res.data);
+                        localStorage.setItem('username', username);
+                        window.location.href = 'quiz.html';
+                    } else {
+                        alert(res.msg || '登录失败');
+                    }
+                })
+                .catch(function(error) {
+                    alert('请求失败，请稍后重试');
+                    console.error(error);
+                });
+            });
+        };
+    </script>
+</body>
+</html>
